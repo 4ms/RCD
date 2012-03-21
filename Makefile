@@ -48,6 +48,7 @@ OPTLEVEL=s
 # described in the avrdude info page.
 # 
 AVRDUDE_PROGRAMMERID=avrispmkII
+#AVRDUDE_PROGRAMMERID=dragon_isp
 
 # port--serial or parallel port to which your 
 # hardware programmer is attached
