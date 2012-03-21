@@ -1,0 +1,1 @@
+avrdude -F -B 8 -P usb -c avrispmkII -p atmega168 -U hfuse:w:0xd7:m -U lfuse:w:0xef:m -U efuse:w:0x01:m -U flash:w:clocker.hex 

@@ -1,0 +1,10 @@
+RCD version 1.0.2
+Compatible with PCB version 1.0.1 and later
+
+Support for 6-switch RCD Breakout panel:
+-Gate/Trig switch
+-Up/Down counting
+-Max-Div 8/16/32/64
+-Auto-Reset off/16/24/32
+
+(first git commit)
