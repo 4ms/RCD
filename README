@@ -1,5 +1,13 @@
-RCD version 1.1.1
+RCD version 1.1.1 -- One clock gate version
 
+This version changes Gate mode to output pulses that are the width of one input clock cycle. Only gate mode is changed, all trigger mode operations are identical to RCD main version 1.1.1.
+
+In Gate mode, the Up/Down switch is used to invert the outputs. The outputs will go high (or low, if inverted) as normal, but they will go low on the next incoming rising edge. 
+
+Output /1 will be always high or always low. This is not a bug, although it might be changed
+
+CHANGELOG:
+Verions 1.1.1-one_clock_gate: One Clock Gate version
+Version 1.1.1: Reversed orientation of Spread switch
 Version 1.1: adds the "Spread" feature, which is accessed via the breakout panel or jumpers
 
-Version 1.1.1: Reversed orientation of Spread switch
