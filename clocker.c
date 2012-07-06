@@ -1,6 +1,6 @@
-// VERSION 1.1:
-// testing
-// --Added Spread Mode
+// VERSION 1.1.1: Reversed orientation of Spread switch
+// Version 1.1:--Added Spread Mode
+
 
 /* Jumper/Breakout info 
 
@@ -9,8 +9,8 @@ Up	Down	PD5	DOWNBEATMODE_JUMPER
 Trig	Gate	PD4	GATEMODE_JUMPER
 Div32	Div8	PC2	DIVIDEBY32_SWITCH
 Div16	Div8	PC3	DIVIDEBY16_SWITCH
-off	Rst16	PC4	SPREADMODE_SWITCH
-off	Rst24	PC5	AUTO_RESE2_SWITCH
+off	Sprd	PC4	SPREADMODE_SWITCH
+off	Rst16	PC5	AUTO_RESET_SWITCH
 */
 
 
@@ -70,7 +70,7 @@ off	Rst24	PC5	AUTO_RESE2_SWITCH
 #define RESET_SWITCH (SWITCH_PIN & (1<<PC1))
 #define DIVIDEBY32_SWITCH (SWITCH_PIN & (1<<PC2))
 #define DIVIDEBY16_SWITCH (SWITCH_PIN & (1<<PC3))
-#define SPREADMODE_SWITCH (SWITCH_PIN & (1<<PC4))
+#define SPREADMODE_SWITCH (!(SWITCH_PIN & (1<<PC4)))
 #define AUTO_RESET_SWITCH (!(SWITCH_PIN & (1<<PC5)))
 
 
@@ -194,15 +194,15 @@ int main(void){
 				if (divideby16_switch){
 					if (divideby32_switch){
 						t=63;
-						d=adc>>3; //31..95 masked by 63 gives 31-63,0-30 (/32-/64,/1-/31)
+						d=adc>>2; //0..63
 					} else {
 						t=15;
-						d=adc>>4; //8...23 masked by 15 gives 8-15,0-7 (/9-/16,/1-/8)
+						d=adc>>4; //0..15
 					}
 				} else {
 					if (divideby32_switch){
 						t=31;
-						d=adc>>3; //16..47 masked by 31 gives 16-31,0-15 (/17-/32,/1-/16)
+						d=adc>>3; //0..31
 					} else {
 						t=7;
 						d=adc>>5; //0..7 (/1-/8)
