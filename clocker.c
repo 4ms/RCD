@@ -1,3 +1,6 @@
+//One Clock Gate version: In gate mode, the output pulses will stay high for one clock
+// -- that is, they go high at the normal time, but go low on the next input clock rising edge
+
 // VERSION 1.1.1: Reversed orientation of Spread switch
 // Version 1.1:--Added Spread Mode
 
@@ -256,14 +259,14 @@ int main(void){
 					if (o7==0) ON(OUT_PORT2,6);
 					
 					if (GATEMODE_JUMPER){
-						if (o0==((div0>>1)+1)) OFF(OUT_PORT1,0);
-						if (o1==((div1>>1)+1)) OFF(OUT_PORT1,1);
-						if (o2==((div2>>1)+1)) OFF(OUT_PORT1,2);
-						if (o3==((div3>>1)+1)) OFF(OUT_PORT1,3);
-						if (o4==((div4>>1)+1)) OFF(OUT_PORT1,4);
-						if (o5==((div5>>1)+1)) OFF(OUT_PORT1,5);
-						if (o6==((div6>>1)+1)) OFF(OUT_PORT2,7);
-						if (o7==((div7>>1)+1)) OFF(OUT_PORT2,6);
+						if (o0==(1)) OFF(OUT_PORT1,0);
+						if (o1==(1)) OFF(OUT_PORT1,1);
+						if (o2==(1)) OFF(OUT_PORT1,2);
+						if (o3==(1)) OFF(OUT_PORT1,3);
+						if (o4==(1)) OFF(OUT_PORT1,4);
+						if (o5==(1)) OFF(OUT_PORT1,5);
+						if (o6==(1)) OFF(OUT_PORT2,7);
+						if (o7==(1)) OFF(OUT_PORT2,6);
 					} else {
 						if (++o0>div0) o0=0;
 						if (++o1>div1) o1=0;
@@ -276,14 +279,14 @@ int main(void){
 					}
 				} else { //DOWNBEAT is off (upbeat)
 					if (GATEMODE_JUMPER){
-						if (o0==((div0>>1)+1)) ON(OUT_PORT1,0);
-						if (o1==((div1>>1)+1)) ON(OUT_PORT1,1);
-						if (o2==((div2>>1)+1)) ON(OUT_PORT1,2);
-						if (o3==((div3>>1)+1)) ON(OUT_PORT1,3);
-						if (o4==((div4>>1)+1)) ON(OUT_PORT1,4);
-						if (o5==((div5>>1)+1)) ON(OUT_PORT1,5);
-						if (o6==((div6>>1)+1)) ON(OUT_PORT2,7);
-						if (o7==((div7>>1)+1)) ON(OUT_PORT2,6);
+						if (o0==(1)) ON(OUT_PORT1,0);
+						if (o1==(1)) ON(OUT_PORT1,1);
+						if (o2==(1)) ON(OUT_PORT1,2);
+						if (o3==(1)) ON(OUT_PORT1,3);
+						if (o4==(1)) ON(OUT_PORT1,4);
+						if (o5==(1)) ON(OUT_PORT1,5);
+						if (o6==(1)) ON(OUT_PORT2,7);
+						if (o7==(1)) ON(OUT_PORT2,6);
 
 						if (o0==0) OFF(OUT_PORT1,0);
 						if (o1==0) OFF(OUT_PORT1,1);
@@ -323,23 +326,23 @@ int main(void){
 
 				if (GATEMODE_JUMPER){
 					if (DOWNBEATMODE_JUMPER){
-						if (o0==((div0+1)>>1)) OFF(OUT_PORT1,0);
-						if (o1==((div1+1)>>1)) OFF(OUT_PORT1,1);
-						if (o2==((div2+1)>>1)) OFF(OUT_PORT1,2);
-						if (o3==((div3+1)>>1)) OFF(OUT_PORT1,3);
-						if (o4==((div4+1)>>1)) OFF(OUT_PORT1,4);
-						if (o5==((div5+1)>>1)) OFF(OUT_PORT1,5);
-						if (o6==((div6+1)>>1)) OFF(OUT_PORT2,7);
-						if (o7==((div7+1)>>1)) OFF(OUT_PORT2,6);
+						if (o0==(1)) OFF(OUT_PORT1,0);
+						if (o1==(1)) OFF(OUT_PORT1,1);
+						if (o2==(1)) OFF(OUT_PORT1,2);
+						if (o3==(1)) OFF(OUT_PORT1,3);
+						if (o4==(1)) OFF(OUT_PORT1,4);
+						if (o5==(1)) OFF(OUT_PORT1,5);
+						if (o6==(1)) OFF(OUT_PORT2,7);
+						if (o7==(1)) OFF(OUT_PORT2,6);
 					} else {
-						if (o0==((div0+1)>>1)) ON(OUT_PORT1,0);
-						if (o1==((div1+1)>>1)) ON(OUT_PORT1,1);
-						if (o2==((div2+1)>>1)) ON(OUT_PORT1,2);
-						if (o3==((div3+1)>>1)) ON(OUT_PORT1,3);
-						if (o4==((div4+1)>>1)) ON(OUT_PORT1,4);
-						if (o5==((div5+1)>>1)) ON(OUT_PORT1,5);
-						if (o6==((div6+1)>>1)) ON(OUT_PORT2,7);
-						if (o7==((div7+1)>>1)) ON(OUT_PORT2,6);
+						if (o0==(1)) ON(OUT_PORT1,0);
+						if (o1==(1)) ON(OUT_PORT1,1);
+						if (o2==(1)) ON(OUT_PORT1,2);
+						if (o3==(1)) ON(OUT_PORT1,3);
+						if (o4==(1)) ON(OUT_PORT1,4);
+						if (o5==(1)) ON(OUT_PORT1,5);
+						if (o6==(1)) ON(OUT_PORT2,7);
+						if (o7==(1)) ON(OUT_PORT2,6);
 					}
 					if (++o0>div0){ o0=0;}
 					if (++o1>div1){ o1=0;}
